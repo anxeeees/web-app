@@ -1,5 +1,63 @@
 @charset "ISO-8859-1";
 
+
+.container {
+    max-width: 200px;
+    margin: 200px auto;
+    padding: 20px;
+    background-color: white;
+    margin-left: 220px;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #0e2433;
+    text-align: center;
+    border-bottom: 2px solid black; /* P?idáno dolní ohrani?ení */
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 22px;
+}
+
+.message {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -7,71 +65,9 @@ body {
     text-align: center;
     margin: 20px;
     padding: 0;
-
-}
-.background-image {
-    position: fixed;
-    top: 90px;
-    left: 46%;
-    width: 8%;
-    height: 18%;
-    background-image: url('tomchai.png');
-    background-position: center;
-}
-
-.container {
-    width: 250px;
-    height: 220px;
-    padding: 50px;
-    margin: 230px auto 150px;
-    background-color: #C8AD7E;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-label {
-    font-size: 13px; /* Velikost písma pro ?títky "Fullname" a "Password" */
-    font-family: 'Arial', sans-serif; /* Nastavení fontu pro ?títky "Fullname" a "Password" */
-    font-weight: normal;
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-    margin-left: -7px;
-    color: #333333;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-    width: 100%;
-    padding: 12px;
-    margin-left: -12px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #0e2433;
-}
-
-input[type="submit"] {
-    background-color: #000000;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.message {
-    background-color: #000000;
-    color: white;
-    padding: 10px;
-    margin-bottom: 10px; /* Zm?na margin-bottom na margin-top */
-    font-size: 13px;
-
+.background-image-register {
+    background-image: url('foto1.jpg');
 }

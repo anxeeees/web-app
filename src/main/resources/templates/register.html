@@ -6,14 +6,13 @@
   <title>Registration Form</title>
   <link rel="stylesheet" th:href="@{../css/style.css}">
 </head>
-<body>
-
-<div class="background-image"></div>
+<body class="background-image-register">
 
 <div class="message" th:if="${message != null}">
   [[${message}]]
 </div>
 <div class="container">
+
 
   <form
           th:action="@{/registration}"
@@ -22,20 +21,20 @@
           th:object="${user}"
   >
     <div class="form-group">
-      <label for="fullname">Jméno a příjmení:</label>
+      <label for="fullname">Name</label>
       <input th:field="*{fullName}" type="text" id="fullname" name="fullname" placeholder="Enter your fullname" required>
     </div>
 
     <div class="form-group">
-      <label for="email">Email:</label>
+      <label for="email">Email</label>
       <input th:field="*{email}" type="email" id="email" name="email" placeholder="Enter your email" required>
     </div>
 
     <div class="form-group">
-      <label for="password">Heslo:</label>
+      <label for="password">Password</label>
       <input th:field="*{password}" type="password" id="password" name="password" placeholder="Enter your password" required>
     </div>
-    <input type="submit" value="Zaregistrovat se">
+    <input type="submit" value="Register">
   </form>
 </div>
 

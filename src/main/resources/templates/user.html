@@ -3,57 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
+    <title>Twitter - Home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0e2433;
-            color: white;
+            background-color: #f5f8fa;
             margin: 0;
             padding: 0;
         }
 
-        .header {
-            background-color: #45b6fe;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #1da1f2;
+            color: #fff;
+            padding: 10px;
             text-align: center;
         }
 
-        .header h1 {
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
             margin: 0;
+            padding: 0;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #0e2433;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
         }
 
-        h2 {
-            color: #45b6fe;
+        .tweet {
+            background-color: #fff;
+            border: 1px solid #e1e8ed;
+            margin-bottom: 10px;
+            padding: 10px;
         }
 
-        /* Add more styles and components for your dashboard here */
+        .tweet h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #1da1f2;
+        }
+
+        .tweet p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
-<div class="header">
-    <h1>USER Dashboard</h1>
+<header>
+    <h1>Welcome, [[${user.getFullName()}]]!</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Messages</a></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="tweet">
+        <h3>John Doe</h3>
+        <p>This is my first tweet. #excited</p>
+    </div>
+    <div class="tweet">
+        <h3>Jane Smith</h3>
+        <p>Just finished reading a great book. Highly recommend!</p>
+    </div>
+    <div class="tweet">
+        <h3>Twitter Support</h3>
+        <p>We are aware of the issue with our servers and are working to resolve it as quickly as possible. Thank you for your patience.</p>
+    </div>
 </div>
 <div class="container">
-    <h2>Welcome, [[${user.getFullName()}]]</h2>
-
     <span sec:authorize="isAuthenticated">
-        <a th:href="@{/logout}">
-         Logout
-
-        </a>
-
+            <a th:href="@{/logout}">Logout</a>
         </span>
-
 </div>
 </body>
 </html>
