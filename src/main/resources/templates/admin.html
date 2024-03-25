@@ -1,60 +1,108 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0e2433;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fa;
+            margin: 0;
+            padding: 0;
+        }
 
-    .header {
-      background-color: #45b6fe;
-      padding: 20px;
-      text-align: center;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
 
-    .header h1 {
-      margin: 0;
-    }
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #0e2433;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+        .navigation {
+            background-color: #fff;
+            border-bottom: 1px solid #e1e8ed;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-    h2 {
-      color: #45b6fe;
-    }
+        .navigation ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Add more styles and components for your dashboard here */
-  </style>
+        .navigation ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .action {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .action i {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .action a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .logout {
+            float: right; /* Zarovnání vlevo */
+        }
+    </style>
 </head>
 <body>
-<div class="header">
-  <h1>ADMIN Dashboard</h1>
+<header>
+    <h1>Welcome, [[${user.getFullName()}]]! Admin</h1>
+</header>
+
+<div class="navigation">
+    <ul>
+        <li class="logout"> <!-- Položka Logout -->
+            <span sec:authorize="isAuthenticated">
+                <a th:href="@{/logout}">Logout</a>
+            </span>
+        </li>
+        <li><a href="#">Home</a></li>
+    </ul>
 </div>
-
 <div class="container">
-  <h2>Welcome, [[${user.getFullName()}]]</h2>
-
-  <span sec:authorize="isAuthenticated">
-        <a th:href="@{/logout}">
-         Logout
-
-        </a>
-
-        </span>
-
+    <div class="actions">
+        <div class="action">
+            <a href="#">Add product</a>
+        </div>
+        <div class="action">
+            <a href="#">Orders</a>
+        </div>
+        <div class="action">
+            <a href="#">All products</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

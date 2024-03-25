@@ -71,3 +71,7 @@ body {
 .background-image-register {
     background-image: url('foto1.jpg');
 }
+
+.icon-sneakers {
+    background-image: url('../../templates/sneakers.png');
+}
