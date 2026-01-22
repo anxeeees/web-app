@@ -3,7 +3,6 @@ package com.admin.controller;
 import com.admin.dto.UserDto;
 import com.admin.service.CustomUserDetail;
 import com.admin.service.UserService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -30,9 +29,6 @@ public class UserControllerTest {
 
     @MockBean
     private UserService  userService;
-
-    @Autowired
-    private ObjectMapper objectMapper;
 
     @MockBean
     private UserDetailsService userDetailsService;

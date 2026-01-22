@@ -1,6 +1,8 @@
 package com.admin.controller;
 
 import com.admin.dto.UserDto;
+import com.admin.model.User;
+import com.admin.repository.UserRepository;
 import com.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,16 +14,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
+import java.util.List;
 
 
 @Controller
 public class UserController {
+
+    private final UserRepository userRepository;
 
     @Autowired
     UserDetailsService userDetailsService;
 
     @Autowired
     private UserService userService;
+
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("/registration")
     public String getRegistrationPage(@ModelAttribute("user") UserDto userDto) {
@@ -53,7 +62,4 @@ public class UserController {
         model.addAttribute("user", userDetails);
         return "admin";
     }
-
-
-
 }
