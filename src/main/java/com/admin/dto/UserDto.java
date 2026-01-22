@@ -1,7 +1,10 @@
 package com.admin.dto;
 
+import lombok.Builder;
+
 //data from user dro to our user table
 //transforms data to the database
+@Builder
 public class UserDto {
     private String email;
     private String password;

@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+// melo by byt namockovane aby se do databaze nepridavala realna data
+// pustit vuci dockeru a rozjet to v docker containeru
 public class RegisterTestCase {
     WebDriver driver;
 

@@ -17,14 +17,11 @@ import java.security.Principal;
 @Controller
 public class UserController {
 
-
-
     @Autowired
     UserDetailsService userDetailsService;
 
     @Autowired
     private UserService userService;
-
 
     @GetMapping("/registration")
     public String getRegistrationPage(@ModelAttribute("user") UserDto userDto) {
